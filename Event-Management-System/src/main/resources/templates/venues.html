@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Venues</h2>
+            <a href="/venues/new" class="btn btn-success">Create New Venue</a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Capacity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="venue : ${venues}">
+                    <td th:text="${venue.id}"></td>
+                    <td th:text="${venue.name}"></td>
+                    <td th:text="${venue.location}"></td>
+                    <td th:text="${venue.capacity}"></td>
+                    <td>
+                        <a th:href="@{'/venues/' + ${venue.id}}" class="btn btn-primary btn-sm">View</a>
+                        <a th:href="@{'/venues/edit/' + ${venue.id}}" class="btn btn-warning btn-sm">Edit</a>
+                        <a th:href="@{'/venues/delete/' + ${venue.id}}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

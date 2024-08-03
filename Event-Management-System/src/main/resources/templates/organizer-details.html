@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container mt-5">
+        <h2>Organizer Details</h2>
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9" th:text="${organizer.id}"></dd>
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9" th:text="${organizer.name}"></dd>
+            <dt class="col-sm-3">Contact Info</dt>
+            <dd class="col-sm-9" th:text="${organizer.contactInfo}"></dd>
+        </dl>
+        <a href="/organizers/edit/{id}" th:href="@{'/organizers/edit/' + ${organizer.id}}" class="btn btn-warning">Edit</a>
+        <a href="/organizers" class="btn btn-secondary">Back to List</a>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

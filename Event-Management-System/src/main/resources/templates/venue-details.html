@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container mt-5">
+        <h2>Venue Details</h2>
+        <dl class="row">
+            <dt class="col-sm-3">ID</dt>
+            <dd class="col-sm-9" th:text="${venue.id}"></dd>
+            <dt class="col-sm-3">Name</dt>
+            <dd class="col-sm-9" th:text="${venue.name}"></dd>
+            <dt class="col-sm-3">Location</dt>
+            <dd class="col-sm-9" th:text="${venue.location}"></dd>
+            <dt class="col-sm-3">Capacity</dt>
+            <dd class="col-sm-9" th:text="${venue.capacity}"></dd>
+        </dl>
+        <a href="/venues/edit/{id}" th:href="@{'/venues/edit/' + ${venue.id}}" class="btn btn-warning">Edit</a>
+        <a href="/venues" class="btn btn-secondary">Back to List</a>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

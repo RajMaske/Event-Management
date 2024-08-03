@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container mt-5">
+        <h2>Edit Organizer</h2>
+        <form action="#" th:action="@{'/organizers/update/' + ${organizer.id}}" th:object="${organizer}" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" th:field="*{name}" required>
+            </div>
+            <div class="mb-3">
+                <label for="contactInfo" class="form-label">Contact Info</label>
+                <input type="text" id="contactInfo" class="form-control" th:field="*{contactInfo}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/organizers" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+	

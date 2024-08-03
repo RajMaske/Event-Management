@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    
+    <!-- Hero Section -->
+    <header class="hero  text-black text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Crafting Unforgettable Moments</h1>
+            <p class="lead">Welcome to Raj Events - Premier Event Planning and Management Experts in Basmath</p>
+            <a href="#services" class="btn btn-success btn-lg">Explore Our Services</a>
+        </div>
+    </header>
+    
+    <!-- About Us -->
+    <section class="about-us py-5">
+        <div class="container">
+            <h2 class="text-center">Who We Are</h2>
+            <p class="text-center">At Raj Events & Weddings, we specialize in creating extraordinary experiences, from luxurious weddings to dynamic corporate events. Our award-winning team is dedicated to turning your visions into reality.</p>
+            
+            <!-- Carousel -->
+            <div id="aboutUsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://www.v3events.in/images/slider/v3_f2.jpg" class="d-block w-100" alt="About Us Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.v3events.in/images/slider/v3_f1.jpg" class="d-block w-100" alt="About Us Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.v3events.in/images/slider/v3_f3.jpg" class="d-block w-100" alt="About Us Image 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#aboutUsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#aboutUsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Our Expertise</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Corporate Excellence</h3>
+                        <p>From conferences to brand promotions, we deliver seamless and impactful corporate events tailored to your business needs.</p>
+                        <img th:src="@{/images/Corporate.jpg}" alt="Corporate Events" class="img-fluid rounded shadow service-img">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Wedding Wonders</h3>
+                        <p>Experience the magic of a perfectly orchestrated wedding with our bespoke planning services. We make every detail count.</p>
+                        <img th:src="@{/images/wedding-planning-image.jpg}" alt="Wedding Planning" class="img-fluid rounded shadow service-img">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box text-center">
+                        <h3>Brand Brilliance</h3>
+                        <p>Enhance and manage your brand’s presence with our innovative event management strategies designed to captivate and engage.</p>
+                        <img th:src="@{/images/brand-promotion-image.jpg}" alt="Brand Promotion" class="img-fluid rounded shadow service-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery py-5">
+        <div class="container">
+            <h2 class="text-center">Moments Captured</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gallery Image 1" class="img-fluid rounded shadow mb-4">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.pexels.com/photos/5638834/pexels-photo-5638834.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gallery Image 2" class="img-fluid rounded shadow mb-4">
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.pexels.com/photos/2477357/pexels-photo-2477357.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gallery Image 3" class="img-fluid rounded shadow mb-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"The team at Raj Events made our wedding a dream come true. Every detail was handled with such care and professionalism. Highly recommended!"</p>
+                        <footer class="blockquote-footer mt-2">Raj Maske</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0">"Raj Events took our corporate event to the next level with their exceptional planning and execution. They truly know how to deliver."</p>
+                        <footer class="blockquote-footer mt-2">Raj Maske</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-5  text-black text-center">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="lead">Ready to make your event extraordinary? Contact us today!</p>
+            <a href="mailto:maskeraj105@gmail.com" class="btn btn-light btn-lg">Email Us</a>
+            <p>Or call us at <strong>+91 7028553350</strong></p>
+        </div>
+    </section>
+
+    <footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
